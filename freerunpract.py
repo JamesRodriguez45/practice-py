@@ -1,5 +1,5 @@
 #Name: James Rodriguez
-#Date: March 8, 2018
+#Date: March 15, 2018
 
 import time
 from random import *
@@ -55,14 +55,31 @@ Reloading last question...''')
         while(h1):
             print('''You are presented with two numbers
 ''', a, "and", b, '''
-Which is the greater number?''',c=int.lower(input()))
+Which is the greater number?''')
+            c=int(input("Enter answer: "))
             if c==a or c==b:
                 h1=False
             else:
                 print("You entered an incorrect response. Try again.")
+                time.sleep(1)
         del(h1)
         if c==a:
-            if a>b:
+            if a>=b:
+                print("You are correct. Congrats on answering an easy question.")
+                h=False
+            else:
+                print("You are incorrect. Try again.")
+                time.sleep(2)
+        else:
+            if b>=a:
+                print("You are correct. Congrats on answering an easy question.")
+                h=False
+            else:
+                print("You are incorrect. Try again.")
+                time.sleep(2)
 
+    time.sleep(3)
+    print("Good job", x, "on answering that question.")
+                
 #----------------------------Main Code------------------------------
 main2()
